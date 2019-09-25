@@ -6,6 +6,7 @@ import AddExpensePage from './components/AddExpensePage';
 import ExpenseDashboardPage from './components/ExpenseDashboardPage';
 import Default from './components/Default';
 import Header from './components/Header';
+import Redux from './components/Redux';
 
 
 
@@ -23,6 +24,7 @@ function App() {
             <Route path={"/help"} component={HelpPage} />
             <Route component={Default} />
           </Switch>
+          <Redux />
         </div>
       </BrowserRouter>
     </div>
