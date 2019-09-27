@@ -39,12 +39,26 @@ export default function Redux() {
         }
     })
 
+    const removeExpense = ({ id } = {}) => ({
+        // if (!id) {
+        //     console.log('error removing item: invalid id');
+        // } else {
+
+        // }
+        type: 'REMOVE_EXPENSE',
+        expense: {
+            id
+        }
+    })
+
     const expensesReducerDefaultState = []
 
     const expensesReducer = (state = expensesReducerDefaultState, action) => {
         switch (action.type) {
             case 'ADD_EXPENSE':
                 return state.concat(action.expense)
+            case 'REMOVE_EXPENSE':
+                return state.filter(item => item.id !== action.expense.id)
             default:
                 return state
         }
@@ -77,7 +91,10 @@ export default function Redux() {
         console.log(store.getState())
     })
 
-    store.dispatch(addExpense({ description: 'Rent', amount: 300 }))
+    const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 300 }))
+    const expenseTwo = store.dispatch(addExpense({ description: 'Coffe', amount: 100 }))
+
+    store.dispatch(removeExpense({ id: expenseOne.expense.id }))
 
     // called every time state changes
     const unsubscribe = store.subscribe(() => {
