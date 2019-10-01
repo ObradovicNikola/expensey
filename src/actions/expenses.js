@@ -18,12 +18,7 @@ export const addExpense = (
     }
 })
 
-export const removeExpense = ({ id } = {}) => ({
-    // if (!id) {
-    //     console.log('error removing item: invalid id');
-    // } else {
-
-    // }
+export const removeExpense = (id) => ({
     type: 'REMOVE_EXPENSE',
     expense: {
         id
