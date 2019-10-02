@@ -1,10 +1,14 @@
 // Filters reducer
 
+const date = new Date()
+const startDateFilter = new Date(date.getFullYear(), date.getMonth(), 1);
+const endDateFilter = new Date(date.getFullYear(), date.getMonth() + 1, 0)
+
 const filtersReducerDefaultState = {
     text: '',
     sortBy: 'date',
-    startDate: undefined,
-    endDate: undefined
+    startDate: startDateFilter.getTime(),
+    endDate: endDateFilter.getTime()
 }
 
 const filtersReducer = (state = filtersReducerDefaultState, action) => {

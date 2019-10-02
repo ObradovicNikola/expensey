@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ExpenseForm from './ExpenseForm'
 import { useDispatch } from 'react-redux'
 import { addExpense } from '../actions/expenses'

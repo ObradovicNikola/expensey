@@ -2,6 +2,11 @@
 
 export default (expenses, { text, sortBy, startDate, endDate }) => {
     return expenses.filter((expense) => {
+        if (endDate) {
+            let nextDay = new Date(endDate)
+            nextDay.setDate(new Date(endDate).getDate() + 1)
+            endDate = nextDay.getTime()
+        }
         const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate
         const endDateMatch = typeof endDate !== 'number' || expense.createdAt <= endDate
         const textMatch = expense.description.toLowerCase().includes(text.toLowerCase())

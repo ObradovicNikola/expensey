@@ -3,12 +3,16 @@ import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 
 export default class ExpenseForm extends Component {
-    state = {
-        description: '',
-        note: '',
-        amount: '',
-        createdAt: new Date(),
-        error: ''
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            description: props.expense ? props.expense.description : '',
+            note: props.expense ? props.expense.note : '',
+            amount: props.expense ? props.expense.amount.toString() : '',
+            createdAt: props.expense ? props.expense.createdAt : new Date().getTime(),
+            error: ''
+        }
     }
 
     onDescriptionChange = (e) => {
@@ -30,7 +34,7 @@ export default class ExpenseForm extends Component {
 
     onDateChange = (createdAt) => {
         if (createdAt) {
-            this.setState(() => ({ createdAt }))
+            this.setState(() => ({ createdAt: createdAt.getTime() }))
         }
     }
 
@@ -49,8 +53,8 @@ export default class ExpenseForm extends Component {
             })
             this.props.onSubmit({
                 description: this.state.description,
-                amount: parseFloat(this.state.amount) * 100,
-                createdAt: this.state.createdAt.getTime(),
+                amount: parseFloat(this.state.amount),
+                createdAt: this.state.createdAt,
                 note: this.state.note
             })
         }
@@ -76,7 +80,7 @@ export default class ExpenseForm extends Component {
                     />
                     <DatePicker
                         selected={this.state.createdAt}
-                        onChange={this.onDateChange}
+                        onChange={date => this.onDateChange(date)}
                         dateFormat="dd MMM yyyy"
                     />
                     <textarea
@@ -88,7 +92,7 @@ export default class ExpenseForm extends Component {
                         value={this.state.note}
                         onChange={this.onNoteChange}>
                     </textarea>
-                    <button>Add expense</button>
+                    <button>{this.props.expense ? 'Update expense' : 'Add expense'}</button>
                 </form>
             </div>
         )
