@@ -6,7 +6,7 @@ import AddExpensePage from './components/AddExpensePage';
 import ExpenseDashboardPage from './components/ExpenseDashboardPage';
 import Default from './components/Default';
 import Header from './components/Header';
-
+import './firebase/firebase'
 
 function App() {
   return (

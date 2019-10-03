@@ -15,7 +15,7 @@ export default function ExpenseList() {
     return (
         <div>
             <h1>Expense List</h1>
-            {expensesList}
+            {expensesList.length > 0 ? expensesList : <h1>No expenses</h1>}
         </div>
     )
 }
