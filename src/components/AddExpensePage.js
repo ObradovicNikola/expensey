@@ -1,7 +1,7 @@
 import React from 'react'
 import ExpenseForm from './ExpenseForm'
 import { useDispatch } from 'react-redux'
-import { addExpense } from '../actions/expenses'
+import { startAddExpense } from '../actions/expenses'
 
 
 export default function AddExpensePage(props) {
@@ -12,8 +12,10 @@ export default function AddExpensePage(props) {
             <h1>Add Expense</h1>
             <ExpenseForm
                 onSubmit={(expense) => {
-                    dispatch(addExpense(expense))
-                    props.history.push('/')
+                    dispatch(startAddExpense(expense)).then(() =>
+                        /// loading popup modal for user experience 
+                        props.history.push('/')
+                    )
                 }}
             />
         </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { removeExpense } from '../actions/expenses'
+import { startRemoveExpense } from '../actions/expenses'
 
 export default function ExpenseListItem({ description, amount, createdAt, id }) {
     const dispatch = useDispatch()
@@ -19,7 +19,7 @@ export default function ExpenseListItem({ description, amount, createdAt, id }) 
             <p>Amount: {amount}</p>
             {/* <p>Created at: {new Date(createdAt).toString('dd MMM yyyy')}</p> */}
             <p>Created at: {(dayOfMonth < 10 ? '0' : '') + `${dayOfMonth} ${months[month]} ${year}`}</p>
-            <button onClick={() => dispatch(removeExpense(id))}>Remove</button>
+            <button onClick={() => dispatch(startRemoveExpense(id))}>Remove</button>
         </div>
     )
 }
