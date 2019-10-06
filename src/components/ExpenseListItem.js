@@ -16,7 +16,7 @@ export default function ExpenseListItem({ description, amount, createdAt, id }) 
             <Link to={`/edit/${id}`}>
                 <p>Description: {description}</p>
             </Link>
-            <p>Amount: {amount}</p>
+            <p>Amount: {amount}$</p>
             {/* <p>Created at: {new Date(createdAt).toString('dd MMM yyyy')}</p> */}
             <p>Created at: {(dayOfMonth < 10 ? '0' : '') + `${dayOfMonth} ${months[month]} ${year}`}</p>
             <button onClick={() => dispatch(startRemoveExpense(id))}>Remove</button>

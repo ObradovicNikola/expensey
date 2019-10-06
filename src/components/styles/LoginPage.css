@@ -1,0 +1,42 @@
+.login-container {
+  background: url("/bg.jpg") no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  width: 25rem;
+  padding: 0 1.6rem;
+  border-radius: 3px;
+}
+
+.login-box h1 {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.login-box button {
+  margin: 1rem;
+  width: 80%;
+  padding: 5px;
+  background: #3094b6;
+  color: white;
+  border: none;
+  font-size: 2rem;
+}
+
+.login-box button:hover {
+  cursor: pointer;
+}

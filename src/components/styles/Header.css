@@ -1,3 +1,17 @@
-nav .is-active {
-  color: orange;
+.header-container nav {
+  background: #3f3f79;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-container nav h1 {
+  font-size: 3rem;
+  color: white;
 }

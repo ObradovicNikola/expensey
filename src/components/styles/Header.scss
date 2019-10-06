@@ -1,3 +1,12 @@
-nav .is-active {
-    color: orange;
+.header-container nav {
+    background: rgb(63, 63, 121);
+    display: flex;
+    padding: 15px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-container nav h1 {
+    font-size: 3rem;
+    color: white;
 }

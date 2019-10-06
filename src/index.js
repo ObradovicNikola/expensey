@@ -1,14 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App, { history } from './App';
 import * as serviceWorker from './serviceWorker';
-
+// import './firebase/firebase'
+import { firebase } from './firebase/firebase'
 import configureStore from './store/configureStore'
 import { startSetExpenses } from './actions/expenses'
+import { login, logout } from './actions/auth'
 import { Provider } from 'react-redux'
 
 const store = configureStore()
+const myApp = (
+    <Provider store={store}>
+        <App />
+    </Provider>
+)
+let hasRendered = false
+const renderApp = () => {
+    if (!hasRendered) {
+        ReactDOM.render(myApp, document.getElementById('root'));
+        hasRendered = true
+    }
+}
 // const unsubscribe = store.subscribe(() => {
 //     const state = store.getState()
 //     console.log(state.filters.text)
@@ -24,13 +38,22 @@ const store = configureStore()
 
 ReactDOM.render(<p>Loading...</p>, document.getElementById('root'))
 
-store.dispatch(startSetExpenses()).then(() => {
-    ReactDOM.render(
-        <Provider store={store}>
-            <App />
-        </Provider>,
-        document.getElementById('root')
-    );
+
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        store.dispatch(login(user.uid))
+        store.dispatch(startSetExpenses()).then(() => {
+            renderApp()
+            if (history.location.pathname === '/') {
+                history.push('/dashboard')
+            }
+        })
+    } else {
+        store.dispatch(logout())
+        renderApp()
+        history.push('/')
+    }
 })
 
 

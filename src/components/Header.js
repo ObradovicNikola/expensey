@@ -1,16 +1,20 @@
 import React from 'react'
 import './styles/Header.css'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { startLogout } from '../actions/auth'
 
 export default function Header() {
+    const dispatch = useDispatch()
+
     return (
-        <div>
-            <h1>Expensey</h1>
+        <div className="header-container">
             <nav>
-                <NavLink to="/" exact activeClassName="is-active">Dashboard</NavLink>
-                <NavLink to="/create" activeClassName="is-active">Create Expense</NavLink>
-                <NavLink to="/help" activeClassName="is-active">Help</NavLink>
+                <Link style={{ 'textDecoration': 'none' }} to="/dashboard">
+                    <h1 >Expensey</h1>
+                </Link>
+                <button onClick={() => dispatch(startLogout())}>Logout</button>
             </nav>
-        </div>
+        </div >
     )
 }
