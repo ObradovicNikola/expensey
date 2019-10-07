@@ -9,7 +9,7 @@ export default function AddExpensePage(props) {
 
     return (
         <div>
-            <h1>Add Expense</h1>
+            <h1 className="page-title" style={{ 'marginTop': '20px' }}>Add Expense</h1>
             <ExpenseForm
                 onSubmit={(expense) => {
                     dispatch(startAddExpense(expense)).then(() =>

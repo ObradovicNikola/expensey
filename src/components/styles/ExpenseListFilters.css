@@ -1,0 +1,90 @@
+.input-group > * {
+  margin: 0 2px;
+  padding: 5px;
+}
+
+.input-group-item *,
+.input-group span {
+  font-size: 1.4rem;
+}
+
+.input-group {
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 5px;
+}
+
+.react-datepicker__input-container * {
+  text-align: center;
+}
+
+.date-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid;
+  padding: 0;
+  padding-right: 10px;
+}
+
+.date-input * {
+  border: none;
+}
+
+.input-group button {
+  background: none;
+}
+
+.input-group button:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+  .input-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .date-input {
+    margin-top: 5px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5px 0;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    border-left: none;
+    border-right: none;
+  }
+  .date-input button {
+    margin-right: 10px;
+    padding: 10px;
+  }
+  .date-input span {
+    width: 100%;
+    text-align: center;
+  }
+}

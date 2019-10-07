@@ -1,0 +1,38 @@
+.showcase {
+  background: lightgrey;
+}
+
+.showcase h1,
+.page-title {
+  font-weight: lighter;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.showcase h1 span,
+.page-title span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.content-container {
+  text-align: left;
+  max-width: 80%;
+  margin: auto;
+  padding: 20px 10px;
+}
+
+.showcase button,
+.expense-form button {
+  margin-top: 1rem;
+  padding: 5px;
+  background: #3094b6;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.showcase button:hover {
+  cursor: pointer;
+}

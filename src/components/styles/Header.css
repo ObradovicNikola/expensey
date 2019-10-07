@@ -1,5 +1,5 @@
 .header-container nav {
-  background: #3f3f79;
+  background: #2e2e3d;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,4 +14,17 @@
 .header-container nav h1 {
   font-size: 3rem;
   color: white;
+}
+
+.header-container button {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  padding: 10px;
+  font-weight: 300;
+  color: white;
+}
+
+.header-container button:hover {
+  cursor: pointer;
 }

@@ -1,0 +1,74 @@
+.input-group>* {
+    margin: 0 2px;
+    padding: 5px;
+}
+
+.input-group-item *,
+.input-group span {
+    font-size: 1.4rem;
+}
+
+.input-group {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    // flex-direction: column;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 5px
+}
+
+.react-datepicker__input-container * {
+    text-align: center;
+}
+
+.date-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    padding: 0;
+    padding-right: 10px;
+}
+
+.date-input * {
+    border: none;
+}
+
+.input-group button {
+    background: none;
+}
+
+.input-group button:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+    .input-group {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .date-input {
+        margin-top: 5px;
+        flex-direction: column;
+        padding: 5px 0;
+        align-items: flex-end;
+        border-left: none;
+        border-right: none;
+    }
+
+    .date-input button {
+        margin-right: 10px;
+        padding: 10px;
+    }
+
+    .date-input span {
+        width: 100%;
+        text-align: center;
+    }
+}

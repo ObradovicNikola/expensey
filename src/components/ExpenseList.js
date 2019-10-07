@@ -1,8 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import ExpenseListItem from './ExpenseListItem'
-import { history } from '../App';
-import getVisibleExpenses from '../selectors/expenses'
 
 export default function ExpenseList(props) {
     // const expenses = useSelector(state => state.expenses)

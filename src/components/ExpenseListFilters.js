@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from '../actions/filters'
 import DatePicker from 'react-datepicker'
+import './styles/ExpenseListFilters.css'
 
 export default function ExpenseListFilters() {
     const textFilter = useSelector(state => state.filters.text)
@@ -34,31 +35,52 @@ export default function ExpenseListFilters() {
     }
 
     return (
-        <div>
-            <input type="text" value={textFilter} onChange={(e) => dispatch(setTextFilter(e.target.value))} />
-            <select name="" id="" value={sortFilter} onChange={(e) => sortBy(e.target.value)}>
-                <option value="date">Date</option>
-                <option value="amount">Amount</option>
-            </select>
-            <DatePicker
-                selected={startDateFilter}
-                onChange={date => onStartDateChange(date)}
-                selectsStart
-                startDate={startDateFilter}
-                endDate={endDateFilter}
-                placeholderText="Start date"
-                dateFormat="dd MMM yyyy"
-            />
-            <DatePicker
-                selected={endDateFilter}
-                onChange={date => onEndDateChange(date)}
-                selectsEnd
-                endDate={endDateFilter}
-                minDate={startDateFilter}
-                placeholderText="End date"
-                dateFormat="dd MMM yyyy"
-            />
-            <button onClick={resetDates}>X</button>
+        <div className="content-container">
+            <div className="input-group">
+                <div className="input-group-item">
+                    <input
+                        type="text"
+                        value={textFilter}
+                        onChange={(e) => dispatch(setTextFilter(e.target.value))}
+                        placeholder="Find expenses"
+                    />
+                </div>
+                <div className="input-group-item" >
+                    <select name="" id="" value={sortFilter} onChange={(e) => sortBy(e.target.value)}>
+                        <option value="date">Date</option>
+                        <option value="amount">Amount</option>
+                    </select>
+                </div>
+                <div className="date-input">
+                    <div className="input-group-item" style={{ 'width': 'auto' }}>
+                        <DatePicker
+                            selected={startDateFilter}
+                            onChange={date => onStartDateChange(date)}
+                            selectsStart
+                            startDate={startDateFilter}
+                            endDate={endDateFilter}
+                            placeholderText="Start date"
+                            dateFormat="dd MMM yyyy"
+                        />
+                    </div>
+                    <span>&#8611;</span>
+                    <div className="input-group-item date-picker">
+                        <DatePicker
+                            selected={endDateFilter}
+                            onChange={date => onEndDateChange(date)}
+                            selectsEnd
+                            startDate={startDateFilter}
+                            endDate={endDateFilter}
+                            minDate={startDateFilter}
+                            placeholderText="End date"
+                            dateFormat="dd MMM yyyy"
+                        />
+                    </div>
+                    <div className="input-group-item">
+                        <button onClick={resetDates}>&#10754;</button>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

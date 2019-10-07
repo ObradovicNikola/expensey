@@ -14,19 +14,19 @@ export default function EditExpensePage(props) {
             {expense && <div>
                 <ExpenseForm
                     expense={expense}
+                    removeButton={(<button
+                        onClick={() => {
+                            dispatch(startRemoveExpense(expense.id)).then(() => {
+                                props.history.push('/')
+                            })
+                        }}
+                    >Remove</button>)}
                     onSubmit={(formExpense) => {
                         dispatch(startEditExpense(expense.id, formExpense)).then(() =>
                             /// loading popup modal for user experience 
                             props.history.push('/')
                         )
                     }} />
-                <button
-                    onClick={() => {
-                        dispatch(startRemoveExpense(expense.id)).then(() => {
-                            props.history.push('/')
-                        })
-                    }}
-                >Remove</button>
             </div>}
             {!expense && <h1>Not valid expense!</h1>}
         </div>

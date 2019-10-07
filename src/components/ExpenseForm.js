@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
+import './styles/ExpenseForm.css'
 
 export default class ExpenseForm extends Component {
     constructor(props) {
@@ -62,37 +63,52 @@ export default class ExpenseForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className="expense-form">
                 {this.state.error && <h1>{this.state.error}</h1>}
                 <form action="" onSubmit={this.onSubmit}>
-                    <input
-                        type="text"
-                        placeholder="Description"
-                        autoFocus
-                        value={this.state.description}
-                        onChange={this.onDescriptionChange}
-                    />
-                    <input
-                        type="number"
-                        placeholder="Amount"
-                        value={this.state.amount}
-                        onChange={this.onAmountChange}
-                    />
-                    <DatePicker
-                        selected={this.state.createdAt}
-                        onChange={date => this.onDateChange(date)}
-                        dateFormat="dd MMM yyyy"
-                    />
-                    <textarea
-                        name=""
-                        id=""
-                        cols="30"
-                        rows="10"
-                        placeholder="Add a note for your expense (optional)"
-                        value={this.state.note}
-                        onChange={this.onNoteChange}>
-                    </textarea>
-                    <button>{this.props.expense ? 'Update expense' : 'Add expense'}</button>
+                    <div className="input-group">
+                        <div className="input-group-item">
+                            <input
+                                type="text"
+                                placeholder="Description"
+                                autoFocus
+                                value={this.state.description}
+                                onChange={this.onDescriptionChange}
+                            />
+                        </div>
+                        <div className="input-group-item">
+                            <input
+                                type="number"
+                                placeholder="Amount"
+                                value={this.state.amount}
+                                onChange={this.onAmountChange}
+                            />
+                        </div>
+                        <div className="input-group-item">
+                            <DatePicker
+                                selected={this.state.createdAt}
+                                onChange={date => this.onDateChange(date)}
+                                dateFormat="dd MMM yyyy"
+                            />
+                        </div>
+                        <div className="input-group-item">
+                            <textarea
+                                name=""
+                                id=""
+                                // cols="30"
+                                rows="5"
+                                placeholder="Add a note for your expense (optional)"
+                                value={this.state.note}
+                                onChange={this.onNoteChange}
+                                style={{ 'width': '100%', 'resize': 'vertical', 'padding': '5px' }}
+                            >
+                            </textarea>
+                        </div>
+                        <div className="input-group-item">
+                            <button>{this.props.expense ? 'Update expense' : 'Add expense'}</button>
+                            {this.props.removeButton}
+                        </div>
+                    </div>
                 </form>
             </div>
         )
