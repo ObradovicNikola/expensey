@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { startRemoveExpense } from '../actions/expenses'
+import './styles/ExpenseListItem.css'
 
 export default function ExpenseListItem({ description, amount, createdAt, id }) {
     const dispatch = useDispatch()
@@ -13,13 +14,21 @@ export default function ExpenseListItem({ description, amount, createdAt, id }) 
 
     return (
         <div>
-            <Link to={`/edit/${id}`}>
-                <p>Description: {description}</p>
+            <Link
+                to={`/edit/${id}`}
+                style={{}}
+                className="list-item"
+            >
+                <div>
+                    <p>{description}</p>
+                    <p style={{ 'color': 'grey' }}>{(dayOfMonth < 10 ? '0' : '') + `${dayOfMonth} ${months[month]} ${year}`}</p>
+                    {/* <button onClick={() => dispatch(startRemoveExpense(id))}>Remove</button> */}
+                </div>
+                <div className="hide-on-mobile">
+                    <p>{amount}$</p>
+                </div>
             </Link>
-            <p>Amount: {amount}$</p>
             {/* <p>Created at: {new Date(createdAt).toString('dd MMM yyyy')}</p> */}
-            <p>Created at: {(dayOfMonth < 10 ? '0' : '') + `${dayOfMonth} ${months[month]} ${year}`}</p>
-            <button onClick={() => dispatch(startRemoveExpense(id))}>Remove</button>
         </div>
     )
 }
