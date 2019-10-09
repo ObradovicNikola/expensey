@@ -22,7 +22,7 @@ export default function ExpenseList(props) {
             {expensesList.length > 0 &&
                 <div className="list-item">
                     <div style={{ 'color': 'grey' }}>
-                        <p>{expensesList.length > 1 ? 'Expenses' : 'Expense'}:</p>
+                        <p>{expensesList.length > 1 ? 'Expenses' : 'Expense'}</p>
                     </div>
                     <div className="hide-on-mobile">
                         <p>Amount</p>

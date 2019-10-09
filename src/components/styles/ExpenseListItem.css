@@ -19,11 +19,10 @@
 }
 
 @media only screen and (max-width: 350px) {
+  .hide-on-mobile {
+    display: none;
+  }
   .list-item {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    background: red;
+    display: block;
   }
 }

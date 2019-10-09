@@ -14,12 +14,10 @@
 
 @media only screen and (max-width: 350px) {
     .hide-on-mobile {
-        // display: none;
+        display: none;
     }
 
     .list-item {
-        // justify-content: center;
-        flex-direction: column;
-        background: red;
+        display: block;
     }
 }
