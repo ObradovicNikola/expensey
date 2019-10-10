@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/expensey/static/css/main.7eeb82bf.chunk.css",
-    "main.js": "/expensey/static/js/main.f9792963.chunk.js",
-    "main.js.map": "/expensey/static/js/main.f9792963.chunk.js.map",
+    "main.css": "/expensey/static/css/main.3cf40379.chunk.css",
+    "main.js": "/expensey/static/js/main.88bfd35b.chunk.js",
+    "main.js.map": "/expensey/static/js/main.88bfd35b.chunk.js.map",
     "runtime-main.js": "/expensey/static/js/runtime-main.f3755aa8.js",
     "runtime-main.js.map": "/expensey/static/js/runtime-main.f3755aa8.js.map",
     "static/css/2.ff9ea1f9.chunk.css": "/expensey/static/css/2.ff9ea1f9.chunk.css",
     "static/js/2.81914cf0.chunk.js": "/expensey/static/js/2.81914cf0.chunk.js",
     "static/js/2.81914cf0.chunk.js.map": "/expensey/static/js/2.81914cf0.chunk.js.map",
     "index.html": "/expensey/index.html",
-    "precache-manifest.4475618d8d304b72e4b928c3e4f0cae7.js": "/expensey/precache-manifest.4475618d8d304b72e4b928c3e4f0cae7.js",
+    "precache-manifest.2874c80d22a3757ff4b11b57fc6983a3.js": "/expensey/precache-manifest.2874c80d22a3757ff4b11b57fc6983a3.js",
     "service-worker.js": "/expensey/service-worker.js",
     "static/css/2.ff9ea1f9.chunk.css.map": "/expensey/static/css/2.ff9ea1f9.chunk.css.map",
-    "static/css/main.7eeb82bf.chunk.css.map": "/expensey/static/css/main.7eeb82bf.chunk.css.map"
+    "static/css/main.3cf40379.chunk.css.map": "/expensey/static/css/main.3cf40379.chunk.css.map"
   }
 }
