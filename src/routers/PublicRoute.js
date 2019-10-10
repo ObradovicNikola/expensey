@@ -9,7 +9,7 @@ const PublicRoute = ({
     const isAuthenticated = useSelector(state => !!state.auth.uid)
     return < Route {...rest} component={(props) => (
         isAuthenticated ? (
-            <Redirect to="/dashboard" />
+            <Redirect to="/expensey/dashboard" />
         ) : (
                 <Component {...props} />
             )

@@ -14,7 +14,7 @@ export default function AddExpensePage(props) {
                 onSubmit={(expense) => {
                     dispatch(startAddExpense(expense)).then(() =>
                         /// loading popup modal for user experience 
-                        props.history.push('/')
+                        props.history.push('/expensey/')
                     )
                 }}
             />

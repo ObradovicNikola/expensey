@@ -11,7 +11,7 @@ export default function Header() {
         <div className="header-container">
             <nav>
                 <Link style={{ 'textDecoration': 'none' }} to="/dashboard">
-                    <h1 >Expensey</h1>
+                    <h1>Expensey</h1>
                 </Link>
                 <button onClick={() => dispatch(startLogout())}>Logout</button>
             </nav>

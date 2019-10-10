@@ -19,10 +19,10 @@ function App() {
       <Router history={history}>
         <div>
           <Switch>
-            <PublicRoute path={"/"} exact component={LoginPage} />
-            <PrivateRoute path={"/dashboard"} component={ExpenseDashboardPage} />
-            <PrivateRoute path={"/create"} component={AddExpensePage} />
-            <PrivateRoute path={"/edit/:id"} component={EditExpensePage} />
+            <PublicRoute path={"/expensey"} exact component={LoginPage} />
+            <PrivateRoute path={"/expensey/dashboard"} component={ExpenseDashboardPage} />
+            <PrivateRoute path={"/expensey/create"} component={AddExpensePage} />
+            <PrivateRoute path={"/expensey/edit/:id"} component={EditExpensePage} />
             <Route component={Default} />
           </Switch>
         </div>

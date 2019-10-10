@@ -3,6 +3,7 @@
 }
 
 .showcase h1,
+.showcase h2,
 .page-title {
   font-weight: lighter;
   font-size: 1.5rem;
@@ -10,9 +11,14 @@
 }
 
 .showcase h1 span,
+.showcase h2 span,
 .page-title span {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.showcase h2 {
+  font-size: 1.3rem;
 }
 
 .content-container {

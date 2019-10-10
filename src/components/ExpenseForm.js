@@ -105,7 +105,7 @@ export default class ExpenseForm extends Component {
                             </textarea>
                         </div>
                         <div className="input-group-item">
-                            <button>{this.props.expense ? 'Update expense' : 'Add expense'}</button>
+                            <button type="submit">{this.props.expense ? 'Update expense' : 'Add expense'}</button>
                             {this.props.removeButton}
                         </div>
                     </div>

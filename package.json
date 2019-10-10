@@ -2,8 +2,11 @@
   "name": "expensey",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://obradovicnikola.github.io/expensey/",
   "dependencies": {
+    "dotenv": "^8.1.0",
     "firebase": "^7.0.0",
+    "gh-pages": "^2.1.1",
     "history": "^4.10.1",
     "react": "^16.9.0",
     "react-datepicker": "^2.9.6",
@@ -16,6 +19,8 @@
     "uuid": "^3.3.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

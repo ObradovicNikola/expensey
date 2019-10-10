@@ -12,7 +12,7 @@ export default function ExpenseListItem({ description, amount, createdAt, id }) 
     return (
         <div>
             <Link
-                to={`/edit/${id}`}
+                to={`/expensey/edit/${id}`}
                 style={{}}
                 className="list-item"
             >

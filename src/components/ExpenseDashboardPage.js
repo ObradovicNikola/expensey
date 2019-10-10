@@ -15,6 +15,7 @@ export default function ExpenseDashboardPage() {
         <div>
             <ExpensesSummary
                 visibleExpenses={visibleExpenses}
+                totalExpenses={expenses.length}
             />
             <ExpenseListFilters />
             <ExpenseList visibleExpenses={visibleExpenses} />

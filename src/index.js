@@ -9,8 +9,14 @@ import configureStore from './store/configureStore'
 import { startSetExpenses } from './actions/expenses'
 import { login, logout } from './actions/auth'
 import { Provider } from 'react-redux'
-
 import LoadingPage from './components/LoadingPage'
+
+require('dotenv').config()
+// const SuperAgent = require('superagent');
+
+// import dotenv from 'dotenv'
+// import errorReporter from './errorReporter'
+
 
 const store = configureStore()
 const myApp = (
@@ -46,13 +52,13 @@ firebase.auth().onAuthStateChanged((user) => {
         store.dispatch(startSetExpenses()).then(() => {
             renderApp()
             if (history.location.pathname === '/') {
-                history.push('/dashboard')
+                history.push('/expensey/dashboard')
             }
         })
     } else {
         store.dispatch(logout())
         renderApp()
-        history.push('/')
+        history.push('/expensey/')
     }
 })
 
