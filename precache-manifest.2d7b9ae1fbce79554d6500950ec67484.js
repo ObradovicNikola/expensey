@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5332aa77078776a61a2ce61ecc2c0e5b",
+    "revision": "51766a7e7f2cbff6af7e6384b6bc63f2",
     "url": "/expensey/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/expensey/static/css/2.ff9ea1f9.chunk.css"
   },
   {
-    "revision": "334572938920b5eb24d3",
+    "revision": "a76058faca6bcf30848d",
     "url": "/expensey/static/css/main.7eeb82bf.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/expensey/static/js/2.81914cf0.chunk.js"
   },
   {
-    "revision": "334572938920b5eb24d3",
-    "url": "/expensey/static/js/main.53604845.chunk.js"
+    "revision": "a76058faca6bcf30848d",
+    "url": "/expensey/static/js/main.b6df49e9.chunk.js"
   },
   {
     "revision": "b096b762b08fc1a05641",
