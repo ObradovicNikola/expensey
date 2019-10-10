@@ -44,6 +44,8 @@ const renderApp = () => {
 
 // console.log(visibleExpenses);
 
+if (history.location.pathname !== '/expensey')
+    history.push('/expensey')
 ReactDOM.render(<LoadingPage />, document.getElementById('root'))
 
 firebase.auth().onAuthStateChanged((user) => {
@@ -51,7 +53,7 @@ firebase.auth().onAuthStateChanged((user) => {
         store.dispatch(login(user.uid))
         store.dispatch(startSetExpenses()).then(() => {
             renderApp()
-            if (history.location.pathname === '/') {
+            if (history.location.pathname === '/expensey/') {
                 history.push('/expensey/dashboard')
             }
         })

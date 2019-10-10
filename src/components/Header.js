@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <div className="header-container">
             <nav>
-                <Link style={{ 'textDecoration': 'none' }} to="/dashboard">
+                <Link style={{ 'textDecoration': 'none' }} to="/expensey/dashboard">
                     <h1>Expensey</h1>
                 </Link>
                 <button onClick={() => dispatch(startLogout())}>Logout</button>

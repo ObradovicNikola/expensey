@@ -8,7 +8,10 @@ export default function LoginPage() {
     const dispatch = useDispatch()
 
     return (
-        <div className="login-container">
+        <div
+            className="login-container"
+            stle={{ 'background': `url(${process.env.PUBLIC_URL}/bg.jpg no-repeat` }}
+        >
             <div className="login-box">
                 <h1>Expensey</h1>
                 <p>It's time to get your expenses under control!</p>
